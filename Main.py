@@ -33,6 +33,6 @@ async def summarize(request: Summarization_Request):
     return {"summary": summary}
 
 @app.post("/summarize_text/")
-async def summarize_text(db: Session = Depends(get_db)):
+async def summarize_text_2(db: Session = Depends(get_db)):
     summary = summarize_text_2(db)
     return {"summary": summary}
