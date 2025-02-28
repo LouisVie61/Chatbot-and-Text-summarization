@@ -6,3 +6,7 @@ torch
 python-multipart
 openai~=1.62.0
 python-dotenv~=1.0.1
+langchain
+tiktoken
+pypdf
+docx2txt
