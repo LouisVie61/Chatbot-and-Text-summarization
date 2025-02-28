@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from pydantic import BaseModel
 from API.chatbot_logic import chat_response, chat_response_ver2
-from API.textsummarization_logic import summarize_text
+from API.textsummarization_logic import summarize_text, summarize_text_2
 from API.upload_routes import upload_router
 from sqlalchemy.orm import Session
 from Config.database import get_db
@@ -30,4 +30,9 @@ async def chatbot_2(request: Chat_Request, db: Session = Depends(get_db)):
 @app.post("/summarize/")
 async def summarize(request: Summarization_Request):
     summary = summarize_text(request.text)
+    return {"summary": summary}
+
+@app.post("/summarize_text/")
+async def summarize_text(db: Session = Depends(get_db)):
+    summary = summarize_text_2(db)
     return {"summary": summary}
