@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic
+transformers
+torch
+python-multipart
+openai~=1.62.0
+python-dotenv~=1.0.1
