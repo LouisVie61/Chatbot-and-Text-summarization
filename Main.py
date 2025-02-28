@@ -1,10 +1,13 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from business_logic.chatbot_logic import chat_response
-from business_logic.textsummarization_logic import summarize_text
+from API.chatbot_logic import chat_response
+from API.textsummarization_logic import summarize_text
+from API.upload_routes import upload_router
 
-# Run: uvicorn main:app --reload
+# Run: uvicorn Main:app --reload
 app = FastAPI()
+
+app.include_router(upload_router, prefix="/files", tags=["File Upload"])
 
 class Chat_Request(BaseModel):
     user_input: str
