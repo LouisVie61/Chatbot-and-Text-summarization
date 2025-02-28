@@ -13,7 +13,7 @@ openai.api_key = api_key
 
 client = openai.OpenAI()
 
-# chatbot_model = pipeline("text-generation", model="deepseek-ai/DeepSeek-R1") valueError: setup
+# chatbot_model = pipeline("text-generation", model="deepseek-ai/DeepSeek-R1") (valueError: setup)
 
 def chat_response(user_input: str):
     response = client.chat.completions.create(
