@@ -1,7 +1,7 @@
-fastapi
+fastapi~=0.115.9
 uvicorn[standard]
-pydantic
-transformers
+pydantic~=2.10.6
+transformers~=4.49.0
 torch
 python-multipart
 openai~=1.62.0
@@ -10,3 +10,5 @@ langchain
 tiktoken
 pypdf
 docx2txt
+SQLAlchemy~=2.0.38
+psycopg2-binary
