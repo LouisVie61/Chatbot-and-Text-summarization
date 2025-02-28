@@ -22,4 +22,7 @@ async def upload_file_store_text(file: UploadFile, db: Session = Depends(get_db)
     db.add(new_file)
     db.commit()
 
+    # Automatically delete the file after processing
+    # os.remove(file_path)
+
     return {"filename": file.filename, "status": "File uploaded and text stored in PostgreSQL"}
